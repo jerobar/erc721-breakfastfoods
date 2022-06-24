@@ -11,7 +11,7 @@ import "./BreakfastFoodsNFT.sol";
  */
 contract BreakfastFoodsNFTFree is BreakfastFoodsNFT {
     /**
-     * @dev Mint token `tokenSupply` to `msg.sender`.
+     * @dev Mints token `tokenSupply` to `msg.sender`.
      *
      * Requirements:
      *
