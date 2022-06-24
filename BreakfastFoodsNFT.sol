@@ -22,6 +22,6 @@ contract BreakfastFoodsNFT is ERC721 {
      * Returns string ipfs directory URI.
      */
     function _baseURI() internal pure override returns (string memory) {
-        return "ipfs://<DIRECTORY_HASH_HERE>/";
+        return "ipfs://QmaPrXV1mGXxNKyyuSjBKDAwwfmjYbkDn5wvDWMaKSWg9M/";
     }
 }
