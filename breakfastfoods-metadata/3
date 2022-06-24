@@ -1,0 +1,26 @@
+{
+  "name": "Banana",
+  "image": "ipfs://QmT5Ss8bHu7G9EcgX4Gesc4cabXDrJCEccKjFKPyBZwNEe/3.png",
+  "attributes": [
+    {
+      "display_type": "number",
+      "trait_type": "Calories",
+      "value": 89
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Fat (g)",
+      "value": 0.3
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Carbohydrates (g)",
+      "value": 23
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Protein (g)",
+      "value": 1.1
+    }
+  ]
+}

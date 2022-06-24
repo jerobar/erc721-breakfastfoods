@@ -1,0 +1,26 @@
+{
+  "name": "Eggs",
+  "image": "ipfs://QmT5Ss8bHu7G9EcgX4Gesc4cabXDrJCEccKjFKPyBZwNEe/1.png",
+  "attributes": [
+    {
+      "display_type": "number",
+      "trait_type": "Calories",
+      "value": 155
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Fat (g)",
+      "value": 11
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Carbohydrates (g)",
+      "value": 1.1
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Protein (g)",
+      "value": 13
+    }
+  ]
+}

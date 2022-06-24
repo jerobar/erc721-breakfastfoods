@@ -1,0 +1,26 @@
+{
+  "name": "Toast",
+  "image": "ipfs://QmT5Ss8bHu7G9EcgX4Gesc4cabXDrJCEccKjFKPyBZwNEe/9.png",
+  "attributes": [
+    {
+      "display_type": "number",
+      "trait_type": "Calories",
+      "value": 313
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Fat (g)",
+      "value": 4.3
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Carbohydrates (g)",
+      "value": 56
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Protein (g)",
+      "value": 13
+    }
+  ]
+}

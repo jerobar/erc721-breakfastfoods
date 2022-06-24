@@ -1,0 +1,26 @@
+{
+  "name": "Pancakes",
+  "image": "ipfs://QmT5Ss8bHu7G9EcgX4Gesc4cabXDrJCEccKjFKPyBZwNEe/7.png",
+  "attributes": [
+    {
+      "display_type": "number",
+      "trait_type": "Calories",
+      "value": 227
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Fat (g)",
+      "value": 10
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Carbohydrates (g)",
+      "value": 28
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Protein (g)",
+      "value": 6
+    }
+  ]
+}

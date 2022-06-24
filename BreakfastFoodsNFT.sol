@@ -12,7 +12,7 @@ contract BreakfastFoodsNFT is ERC721 {
     uint256 public constant MAX_TOKEN_SUPPLY = 10;
 
     /**
-     * @dev Calls ERC721 constructor to set valus for {_name}, {_symbol}.
+     * @dev Calls `ERC721` constructor to set valus for {_name}, {_symbol}.
      */
     constructor() ERC721("BreakfastFoods", "BRKFST") {}
 

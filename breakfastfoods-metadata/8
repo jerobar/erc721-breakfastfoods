@@ -1,0 +1,26 @@
+{
+  "name": "Sausages",
+  "image": "ipfs://QmT5Ss8bHu7G9EcgX4Gesc4cabXDrJCEccKjFKPyBZwNEe/8.png",
+  "attributes": [
+    {
+      "display_type": "number",
+      "trait_type": "Calories",
+      "value": 346
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Fat (g)",
+      "value": 31
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Carbohydrates (g)",
+      "value": 0.7
+    },
+    {
+      "display_type": "number",
+      "trait_type": "Protein (g)",
+      "value": 14
+    }
+  ]
+}
