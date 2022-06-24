@@ -20,3 +20,6 @@ Create an NFT that can be minted by paying with an ERC20 token.
 ## Assignment 5
 
 Staking.
+
+- BreakfastCoinStaking.sol (Note that 'BreakfastCoin.sol' is unsuitable for this assignment as it allows unlimited minting from any address)
+- BreakfastFoodsNFTStaking.sol

@@ -4,6 +4,9 @@ pragma solidity 0.8.7;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
+/**
+ * @dev Implementation of the ERC20 Token Standard for 'BreakfastCoin'.
+ */
 contract BreakfastCoin is ERC20 {
     /**
      * @dev Calls `ERC20` constructor to set valus for {_name}, {_symbol}.
