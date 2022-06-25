@@ -6,19 +6,12 @@ import "./BreakfastFoodsNFTFree.sol";
 import "./BreakfastCoinStaking.sol";
 
 /**
-ISSUES:
-
-- updateWithdrawalTimes has a bug
-
- */
-
-/**
  * @dev 'BreakfastFoodsNFTStaking' implementation of the 'BreakfastFoodsNFT' token.
  *
  * Users may stake their NFTs to receieve 10 'BreakfastFoodCoin' tokens every 24 hours.
  */
 contract BreakfastFoodsNFTStaking is BreakfastFoodsNFTFree {
-    uint256 public constant REWARD_PERIOD = 1 minutes;
+    uint256 public constant REWARD_PERIOD = 24 hours;
 
     // Token ID => Staker address
     mapping(uint256 => address) private _stakedTokens;
@@ -74,7 +67,13 @@ contract BreakfastFoodsNFTStaking is BreakfastFoodsNFTFree {
     function updateWithdrawalTimes(uint256 tokenId, uint256 rewardPeriods)
         private
     {
-        _withdrawalTimes[tokenId] = block.timestamp + REWARD_PERIOD;
+        uint256 timeElapsed = block.timestamp - _withdrawalTimes[tokenId];
+        uint256 leftOver = (block.timestamp - _withdrawalTimes[tokenId]) -
+            (timeElapsed / REWARD_PERIOD);
+
+        _withdrawalTimes[tokenId] =
+            block.timestamp +
+            (REWARD_PERIOD - leftOver);
     }
 
     /**

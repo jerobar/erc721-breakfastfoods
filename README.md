@@ -2,6 +2,14 @@
 
 An ERC721 token contract "BreakfastFoodsNFT" and various implementations extending it with unique functionality.
 
+## Assignment 1
+
+### ERC721URIStorage
+
+### ERC721Pausable
+
+## Assignment 2
+
 ## Assignment 3
 
 Create an NFT collection and put it on opensea.
