@@ -2,16 +2,23 @@
 
 pragma solidity 0.8.7;
 
-import "./BreakfastFoodsNFT.sol";
+import "./BreakfastFoodsNFTFree.sol";
 import "./BreakfastCoinStaking.sol";
+
+/**
+ISSUES:
+
+- updateWithdrawalTimes has a bug
+
+ */
 
 /**
  * @dev 'BreakfastFoodsNFTStaking' implementation of the 'BreakfastFoodsNFT' token.
  *
  * Users may stake their NFTs to receieve 10 'BreakfastFoodCoin' tokens every 24 hours.
  */
-contract BreakfastFoodsNFTStaking is BreakfastFoodsNFT {
-    uint256 public constant REWARD_PERIOD = 24 hours;
+contract BreakfastFoodsNFTStaking is BreakfastFoodsNFTFree {
+    uint256 public constant REWARD_PERIOD = 1 minutes;
 
     // Token ID => Staker address
     mapping(uint256 => address) private _stakedTokens;
@@ -28,6 +35,13 @@ contract BreakfastFoodsNFTStaking is BreakfastFoodsNFT {
         breakfastCoinContract = BreakfastCoinStaking(
             breakfastCoinContractAddress
         );
+    }
+
+    /**
+     * @dev Returns bool whether `tokenId` is currently staked.
+     */
+    function tokenIsStaked(uint256 tokenId) public view returns (bool) {
+        return _stakedTokens[tokenId] != address(0);
     }
 
     /**
@@ -54,20 +68,13 @@ contract BreakfastFoodsNFTStaking is BreakfastFoodsNFT {
      * @dev Updates the withdrawal time for `tokenId`, accounting for any
      * time 'left over'.
      *
-     * e.g. 50 hours = 2 reward periods and 2 hours 'left over' toward next
-     * rewards.
+     * e.g. 50 hours = 2 reward periods and 2 hours 'left over' counting
+     * toward next reward time.
      */
     function updateWithdrawalTimes(uint256 tokenId, uint256 rewardPeriods)
         private
     {
-        // Calculate hours 'left' to subtract from next withdrawal time
-        uint256 timeLeftOver = (block.timestamp -
-            (rewardPeriods * REWARD_PERIOD)) - _withdrawalTimes[tokenId];
-
-        // Update `_withdrawalTimes` for this token
-        _withdrawalTimes[tokenId] =
-            (block.timestamp - timeLeftOver) +
-            REWARD_PERIOD;
+        _withdrawalTimes[tokenId] = block.timestamp + REWARD_PERIOD;
     }
 
     /**
@@ -117,11 +124,18 @@ contract BreakfastFoodsNFTStaking is BreakfastFoodsNFT {
     /**
      * @dev Allows `msg.sender` to unstake token `tokenId`.
      *
-     * Note that `transferFrom` handles the requisite permissions checks.
+     * Requirements:
+     *
+     * - Token `tokenId` is currently staked by `msg.sender`
      */
     function unstake(uint256 tokenId) external {
+        require(
+            _stakedTokens[tokenId] == msg.sender,
+            "BreakfastFoodsNFTStaking: Token not staked by this address"
+        );
+
         // Transfer token from contract address to `msg.sender`
-        transferFrom(address(this), msg.sender, tokenId);
+        _transfer(address(this), msg.sender, tokenId);
 
         _stakedTokens[tokenId] = address(0);
     }

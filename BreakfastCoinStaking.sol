@@ -10,15 +10,15 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 contract BreakfastCoinStaking is ERC20 {
     mapping(address => bool) private _mintingAddresses;
 
-    address immutable deployer;
+    address private immutable _deployer;
 
     /**
-     * @dev Calls `ERC20` constructor to set valus for {_name}, {_symbol},
-     * sets `seployer` to `msg.sender` and adds `deployer` to list of
+     * @dev Calls `ERC20` constructor to set valus for {_name} and {_symbol},
+     * sets `_deployer` to `msg.sender` and adds `_deployer` to list of
      * approved minters.
      */
     constructor() ERC20("BreakfastCoin", "BRKFST") {
-        deployer = msg.sender;
+        _deployer = msg.sender;
         _mintingAddresses[msg.sender] = true;
     }
 
