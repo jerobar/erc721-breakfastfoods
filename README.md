@@ -14,7 +14,9 @@ ERC721Pausable extends ERC721 with OpenZeppelin's `Pausable` contract, adding a 
 
 ## Assignment 2
 
-ERC115 differs from the ERC721 standard in that it allows for one contract to manage any number of different token types (any combination of fungible, non-fungible, and/or semi-fungible). While the ERC721 token ID is single, non-fungible index to a specific token, the ERC115 standard allows for each token ID to represent a new token type with its own metadata, supply, etc.
+ERC1155 differs from the ERC721 standard in that it allows for one contract to manage any number of different token types (any combination of fungible, non-fungible, and/or semi-fungible). While the ERC721 token ID is single, non-fungible index to a specific token, the ERC1155 standard allows for each token ID to represent a new token type with its own metadata, supply, etc.
+
+ERC1155 transactions may batch transfer multiple different types of tokens at once, saving on gas fees. Its transfer functions differ from ERC721 in that they also contain "amount" and "data" arguments.
 
 ## Assignment 3
 
