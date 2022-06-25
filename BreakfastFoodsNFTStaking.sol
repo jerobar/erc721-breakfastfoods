@@ -67,7 +67,9 @@ contract BreakfastFoodsNFTStaking is BreakfastFoodsNFTFree {
     function updateWithdrawalTimes(uint256 tokenId, uint256 rewardPeriods)
         private
     {
+        // Calculate total time elapsed since earliest withdrawal time
         uint256 timeElapsed = block.timestamp - _withdrawalTimes[tokenId];
+        // Calculate remaining time to account for in new withdrawal time
         uint256 leftOver = (block.timestamp - _withdrawalTimes[tokenId]) -
             (timeElapsed / REWARD_PERIOD);
 
